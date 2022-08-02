@@ -133,6 +133,17 @@ string
 string
 
 
+-------------
+
+
+## Get employees  -  GET /employees
+###### Permission: Admins
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
 ## Get logged in employee  -  GET /employees/me
 ###### Permission: Admins and Employees
 
@@ -142,8 +153,234 @@ string
 string
 
 
-## Get employee by Id  -  GET /employees/:id
+## Get employee by Id  -  GET /employees/:employeeId
 ###### Permission: Admins
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+## Edit employee  -  PATCH /employees/:employeeId
+###### Permission: Admins
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+**content-type  :** Set value to application/json <br />
+string
+
+
+### Body Params
+
+**email :** [OPTIONAL] Employee's email ('employee@email.com') <br />
+string
+
+**firstName :** [OPTIONAL] Employee's first name <br />
+string
+
+ **lastName :** [OPTIONAL] Employee's last name <br />
+string
+
+**gender :** [OPTIONAL] Employees's gender ('Female') <br />
+string
+
+**middleName :** [OPTIONAL] Employee's last name <br />
+string
+
+**dob :** [OPTIONAL] Employee's date of birth (new Date('09/20/1991')) <br />
+Date
+
+**dateOfJoining :** [OPTIONAL] Employee's date of joining the comapany (new Date('01/20/2022')) <br />
+Date
+
+**terminateDate :** [OPTIONAL] Employee's date of leaving the comapany (new Date('07/20/2022')) <br />
+Date
+
+**phone :** [OPTIONAL] Employees's gender ('Female') <br />
+string
+
+**photo :** [OPTIONAL] Url of the employee's picture <br />
+string
+
+**address :** [OPTIONAL] Url of the employee's picture ({street: string, city: string, country: string}) <br />
+JSON object
+
+**workExperience :** [OPTIONAL] Employee's work experience({fromDate: Date, toDate: Date, companyName: string, designation: string}) <br />
+JSON object
+
+**education :** [OPTIONAL] Employee's education ([{school: string, degree: string, grade: string, year: string}]) <br />
+JSON object
+
+## Delete employee by Id  -  DELETE /employees/:employeeId
+###### Permission: Admins
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+-------------
+
+## Create Grievance  -  POST /grievances
+###### Permission: Employees
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+**content-type  :** Set value to application/json <br />
+string
+
+
+### Body Params
+
+**title :** Grievance title <br />
+string
+
+**details :** Grievance details <br />
+string
+
+## Get grievances  -  GET /grievances
+###### Permission: Admins
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+## Get grievance by Id  -  GET /grievanes/grievanceId
+###### Permission: Employees
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+## Edit Grievance  -  PATCH /grievances/:grievanceId
+###### Permission: Employees
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+**content-type  :** Set value to application/json <br />
+string
+
+
+### Body Params
+
+**title :** [OPTIONAL] Grievance title <br />
+string
+
+**details :** [OPTIONAL] Grievance details <br />
+string
+
+## DELETE grievance by Id  -  DELETER /grievanes/grievanceId
+###### Permission: Employees
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+-------------
+
+## Create leave Application  -  POST /leaves
+###### Permission: Employees
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+**content-type  :** Set value to application/json <br />
+string
+
+
+### Body Params
+
+**fromDate :** Leave start date <br />
+Date
+
+**toDate :** Leave end date <br />
+Date
+
+**reasonForLeave :** The reason for the leave <br />
+string
+
+**type :** Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
+string 
+
+## Get leaves  -  GET /leaves
+###### Permission: Admins
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+## Get leaves by Id  -  GET /leaves/leaveId
+###### Permission: Admins andEmployees
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+## Edit leaves  -  PATCH /leaves/:leaveId
+###### Permission: Admins and Employees
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+**content-type  :** Set value to application/json <br />
+string
+
+
+### Body Params
+
+**fromDate :** [OPTIONAL] Leave start date <br />
+Date
+
+**toDate :** [OPTIONAL] Leave end date <br />
+Date
+
+**reasonForLeave :** [OPTIONAL] The reason for the leave <br />
+string
+
+**type :** [OPTIONAL] Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
+string
+
+## Manage leaves  -  PATCH /leaves/manage/:leaveId
+###### Permission: Admins
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+**content-type  :** Set value to application/json <br />
+string
+
+
+### Body Params
+
+**status :** Type of leave ['APPROVED', 'PENDING', 'REJECTED', 'CANCELLED'] <br />
+string
+
+## DELETE leave by Id  -  DELETER /leaves/leaveId
+###### Permission: Admins and Employees
 
 ### Headers
 

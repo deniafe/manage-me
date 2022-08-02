@@ -112,10 +112,6 @@ export class EditEmployeeDto {
   @IsOptional()
   photo?: string;
 
-  @IsInt()
-  @IsOptional()
-  projectId?: number;
-
   @IsOptional()
   @IsNotEmptyObject()
   @IsObject()
