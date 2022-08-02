@@ -224,6 +224,92 @@ JSON object
 string
 
 
+## Activities
+
+### Create activities -  POST /activities
+###### Permission: Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+* **content-type  :** Set value to application/json <br />
+string
+
+
+#### Body Params
+
+* **date :** Work day date <br />
+Date
+
+* **in :** The time the employee is coming in <br />
+Date
+
+* **tasksForToday :** A list of tasks for employee to do <br />
+JSON Object (Array/List of strings)
+
+
+### Get activities  -  GET /activities
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+### Get activity by Id  -  GET /activities/activityId
+###### Permission: Admins and Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+### Edit activities  -  PATCH /activities/:activityId
+###### Permission: Admins and Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+* **content-type  :** Set value to application/json <br />
+string
+
+
+#### Body Params
+
+
+* **date :** Work day date <br />
+Date
+
+* **in :** The time the employee comes in <br />
+Date
+
+* **in :** The time the employee goes out <br />
+Date
+
+* **tasksForToday :** A list of tasks for employee to do <br />
+JSON Object (Array/List of strings)
+
+* **accomplishment :** A list of things employee has accomplished for the day <br />
+JSON Object (Array/List of strings)
+
+* **tasksForTomorrow :** A list of tasks for employee to do the nest day <br />
+JSON Object (Array/List of strings)
+
+### DELETE activity by Id  -  DELETE /activities/activityId
+###### Permission: Admins and Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+
 ## Grievances
 
 ### Create Grievance  -  POST /grievances
