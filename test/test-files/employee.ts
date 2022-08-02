@@ -16,7 +16,6 @@ export const Employee = (pactum) => {
   });
 
   describe('Get me', () => {
-    // ! I must still come back to edit this as this should be a descriptive get of all the things pertaining to an employee
     it('should get current signed in employee', () => {
       return pactum
         .spec()
