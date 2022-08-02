@@ -87,8 +87,8 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 **email :** Employee's email ('employee@email.com') <br />
 string
 
-#### password : #### Password that will be passed to employee
-###### string
+**password :** Password that will be passed to employee
+string
 
 #### firstName
 ##### Employee's first name
