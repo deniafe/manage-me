@@ -76,31 +76,34 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 ### Headers
 
-#### Authorization #### : Set value to Bearer ACCESS_TOKEN
+#### Authorization : Set value to Bearer ACCESS_TOKEN
 ###### string
 
-##### content-type #### : Set value to application/json
+##### content-type  : Set value to application/json
 ###### string
 
 ### Body Params
 
-#### email : Employee's email ('employee@email.com')
+#### email 
+##### Employee's email ('employee@email.com')
 ###### string
 
-#### password : Password that will be passed to employee
+#### password : #### Password that will be passed to employee
 ###### string
 
-##### firstName : Employee's first name
+#### firstName
+##### Employee's first name
 ###### string
 
-##### lastName : Employee's last name
+##### lastName : string
+> Employee's last name 
 ###### string
 
-##### dob : Employee's date of birth (new Date('09/20/1991'))
-###### Date
+##### dob : Date
+Employee's date of birth (new Date('09/20/1991'))
 
-##### gender : Employees's gender ('Female')
-###### string
+##### gender : string
+Employees's gender ('Female')
 
 
 ## Login
@@ -108,18 +111,19 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 ### Headers
 
+#### Authorization : Set value to Bearer ACCESS_TOKEN
+###### string
+
 ##### content-type  : Set value to application/json
 ###### string
 
 
 ### Body Params
 
-##### email : Employee's email (employee@email.com)
-###### string
+##### email : string
+Employee's email (employee@email.com)
 
-
-##### password : Password that will be passed to employee
-###### string
-
+##### password : string
+Password that will be passed to employee
 
 
