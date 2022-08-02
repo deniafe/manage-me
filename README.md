@@ -81,37 +81,37 @@ string
 
 ## Create an employee
 
-##### Permission: Admins
+###### Permission: Admins
 
 ### Body Params
 
-#### email : Employee's email ('employee@email.com')
-string
+##### email : string
+Employee's email ('employee@email.com')
 
-* password : Password that will be passed to employee
-string
+##### password : string
+Password that will be passed to employee
 
-* firstName : Employee's first name
-string 
+##### firstName : string
+Employee's first name
 
-* lastName : Employee's last name
-string   
+##### lastName : string
+Employee's last name 
 
-* dob : Employee's date of birth (new Date('09/20/1991'))
-Date   
+##### dob : Date
+Employee's date of birth (new Date('09/20/1991'))
 
-* gender : Employees's gender ('Female')
-string
+##### gender : string
+Employees's gender ('Female')
 
 
 ## Login
 
-##### Permission: Admins and Employees
+###### Permission: Admins and Employees
 
-* email : Employee's email (employee@email.com)
-string
+##### email : string
+Employee's email (employee@email.com)
 
-* password : Password that will be passed to employee
-string
+##### password : string
+Password that will be passed to employee
 
 
