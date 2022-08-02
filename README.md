@@ -1,89 +1,70 @@
-# Employee Management System
+# Manage Me - An Employee Management System
 
-Note: this is a repository of Employee Management System backend. the repository of the Frontend is available here: https://github.com/fenil29/employee-management-system-frontend-react
-
--------------
-
-Website: https://employee-management-fk.netlify.com
-
--------------
-
-- Employee Management system is a web application that enables users to create,store and manage Employee Records
-- The application also provides facilities of a payroll system and leave application
-- It is a management system that helps to manage employees and also the company’s different task and project
-- Employee management system can manage and store details like employees personal info and also details of different department of the company and different branches of the organization
+- Manage Me is an api that enables users to create, store and manage Employee Records
+- The application also provides simple facilities for a payroll and leave application
+- Employess can also log daily tasks and be assigned to projects
+- Employee management system can manage and store details like employees personal info, their work experiences and education.
 
 -------------
 
-This web application contains three account access:
+This web application contains two account access:
 - Admin
-- HR
 - Employee
 
-All three accounts contain different privileges and authentication.
+The two accounts contain different privileges.
 
 -------------
 Technology used :
-- REACT JS
 - NODE JS 
 - EXPRESS
-- MONGO DB
+- NEST JS
+- TYPESCRIPT 
+- PRISMA
+- POSTGRESQL
+- DOCKER
 
 -------------
 
-The different part or module of this project is as follows:
-- Login Page
-- Admin Dashboard
-- HR Dashboard
-- Employee Dashboard
-- Authentication and authorization(user verification)
-- Database(MongoDB)
-- Mobile-Friendly UI
+The different modules of this project is as follows:
+- Auth
+- Activity
+- Employee
+- Grievance
+- Leave
+- Project
+- Report
+- Resignation
+- Salary
 
 -------------
 
 ## How to run this project in a local development machine
-* Make sure you install node modules in both frontend and backend using `npm install` command
-* create .env file in your backend project 
-Example of .env file (this file is present with the name .envexample):
-```
-PORT=4000
-DATABASEURL=mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][?options]]
-JWTKEY=set_your_jwt_key
-```
-(note: Here I am using mondo DB atlas which provides a free cloud-based database so you can paste the URL provided by the atlas or you can install your own database)
-More Information about the MongoDB connection string : https://docs.mongodb.com/manual/reference/connection-string/
-* run both projects with the `npm start` command
-
-
+* Make sure you install node modules using `yarn` command
+* Make sure you have docker running
+* Run the following commands
 ## Installation
 
-```bash
-$ npm install
-```
+yarn // install node modules
+
+## Setup and run the database
+
+yarn db:dev:restart // start postgres in docker and push migrations
 
 ## Running the app
 
-```bash
-# development
-$ npm run start
+yarn start:dev // start api in dev mode
 
-# watch mode
-$ npm run start:dev
+* You can edit the .env files in the project or leave as is
 
-# production mode
-$ npm run start:prod
-
-## Test
+## For Test
 
 ```bash
-# unit tests
-$ npm run test
+* You can adjust the sleep time for the `test:e2e` in the package.json file to suite your system speed.
 
 # e2e tests
-$ npm run test:e2e
+$ yarn test:e2e // start postgres in docker and push migrations and run the e2e test
 
-# test coverage
-$ npm run test:cov
 ```
+
+
 

@@ -1,0 +1,199 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Employee {
+  id                Int                @id @default(autoincrement())
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  email             String             @unique
+  hash              String
+  firstName         String
+  lastName          String
+  middleName        String?
+  gender            String
+  dob               DateTime?
+  dateOfJoining     DateTime?          @default(now())
+  terminateDate     DateTime?
+  photo             String?
+  phone             String
+  admin             Boolean
+  leaveBalance      Int?               @default(30)
+  address           Address?
+  projectId         Int?
+  project           Project?           @relation(fields: [projectId], references: [id])
+  salary            Salary?
+  resignation       Resignation?
+  education         Education[]
+  leaveApplications LeaveApplication[]
+  workExperiences   WorkExperience[]
+  grievances        Grievance[]
+  activities        Activity[]
+
+  @@map("employees")
+}
+
+model Project {
+  id          Int            @id @default(autoincrement())
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  title       String
+  description String?
+  url         String?
+  budget      String?
+  resources   String[]
+  challenges  String[]
+  startDate   DateTime?
+  dueDate     DateTime?
+  endDate     DateTime?
+  remark      String?
+  status      ProjectStatus? @default(INACTIVE)
+  employees   Employee[]
+
+  @@map("projects")
+}
+
+model Salary {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  basicSalary   String
+  bankName      String
+  accountNumber String
+  accountName   String
+  employeeId    Int      @unique
+  employee      Employee @relation(fields: [employeeId], references: [id])
+
+  @@map("salaries")
+}
+
+model Education {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  school     String
+  degree     String
+  grade      String
+  year       String
+  employeeId Int      @unique
+  employee   Employee @relation(fields: [employeeId], references: [id])
+
+  @@map("educations")
+}
+
+model LeaveApplication {
+  id             Int          @id @default(autoincrement())
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  fromDate       DateTime
+  toDate         DateTime
+  reasonForLeave String
+  status         LeaveStatus? @default(PENDING)
+  type           LeaveType?   @default(CASUAL)
+  employeeId     Int
+  employee       Employee     @relation(fields: [employeeId], references: [id])
+
+  @@map("leave_applications")
+}
+
+model WorkExperience {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  fromDate    DateTime
+  toDate      DateTime
+  companyName String
+  designation String
+  employeeId  Int
+  employee    Employee @relation(fields: [employeeId], references: [id])
+
+  @@map("work_experiences")
+}
+
+model Address {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  street     String
+  city       String
+  country    String
+  employeeId Int      @unique
+  employee   Employee @relation(fields: [employeeId], references: [id])
+
+  @@map("addresses")
+}
+
+model Resignation {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  reason     String
+  details    String
+  notice     DateTime
+  employeeId Int      @unique
+  employee   Employee @relation(fields: [employeeId], references: [id])
+
+  @@map("resignations")
+}
+
+model Grievance {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  title      String
+  details    String
+  employeeId Int      @unique
+  employee   Employee @relation(fields: [employeeId], references: [id])
+
+  @@map("grievances")
+}
+
+model Activity {
+  id               Int       @id @default(autoincrement())
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  date             DateTime?
+  in               DateTime
+  out              DateTime?
+  tasksForToday    String[]
+  accomplishments  String[]
+  challenges       String[]
+  tasksForTomorrow String[]
+  employeeId       Int       @unique
+  employee         Employee  @relation(fields: [employeeId], references: [id])
+
+  @@map("activities")
+}
+
+enum ProjectStatus {
+  INACTIVE
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum LeaveStatus {
+  APPROVED
+  PENDING
+  CANCELLED
+  REJECTED
+}
+
+enum LeaveType {
+  SICK
+  CASUAL
+  MATERNITY
+  PATERNITY
+  BEREAVEMENT
+  COMPENSATORY
+  SABBATICAL
+  UNPAID
+}
