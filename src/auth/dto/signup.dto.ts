@@ -30,7 +30,7 @@ export class SignupDto {
   middleName?: string;
 
   @IsString()
-  @IsOptional()
+  @IsNotEmpty()
   gender: string;
 
   @IsDate()

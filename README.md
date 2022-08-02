@@ -71,13 +71,10 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 # API END POINTS
 
-## Create an employee  -  POST /auth/register
+## Register employee  -  POST /auth/register
 ###### Permission: Admins
 
 ### Headers
-
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
- string
 
 **content-type  :** Set value to application/json <br />
 string
@@ -96,10 +93,25 @@ string
  **lastName :** Employee's last name <br />
 string
 
-**dob :** Employee's date of birth (new Date('09/20/1991')) <br />
+**gender :** Employees's gender ('Female') <br />
+string
+
+**middleName :** [OPTIONAL] Employee's last name <br />
+string
+
+**dob :** [OPTIONAL] Employee's date of birth (new Date('09/20/1991')) <br />
 Date
 
-**gender :** Employees's gender ('Female') <br />
+**dateOfJoining :** [OPTIONAL] Employee's date of joining the comapany (new Date('01/20/2022')) <br />
+Date
+
+**terminateDate :** [OPTIONAL] Employee's date of leaving the comapany (new Date('07/20/2022')) <br />
+Date
+
+**phone :** [OPTIONAL] Employees's gender ('Female') <br />
+string
+
+**photo :** [OPTIONAL] Url of the employee's picture <br />
 string
 
 
@@ -107,9 +119,6 @@ string
 ###### Permission: Admins and Employees
 
 ### Headers
-
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
-string
 
 **content-type  :** Set value to application/json <br />
 string
@@ -120,8 +129,23 @@ string
 **email :** Employee's email (employee@email.com) <br />
 string
 
-**password :** Password that will be passed to employee <br />
+**password :** Employee's password <br />
 string
 
 
+## Get logged in employee  -  GET /employees/me
+###### Permission: Admins and Employees
 
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+## Get employee by Id  -  GET /employees/:id
+###### Permission: Admins
+
+### Headers
+
+**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
