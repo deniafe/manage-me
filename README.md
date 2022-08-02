@@ -573,3 +573,191 @@ string
 
 * **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
+
+
+## Resignation
+
+### Create resignation  -  POST /resignations
+###### Permission: Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+* **content-type  :** Set value to application/json <br />
+string
+
+
+#### Body Params
+
+* **reason :** Employee's reason for resignation <br />
+string
+
+* **details :** Employee's resignation details <br />
+string
+
+* **notice :** Employee's resignation notice <br />
+Date
+
+### Get resignations  -  GET /resignations
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+### Get resignation by Id  -  GET /resignations/resignationId
+###### Permission: Admins and Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+### Edit resignations  -  PATCH /resignations/:resignationId
+###### Permission: Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+* **content-type  :** Set value to application/json <br />
+string
+
+
+#### Body Params
+
+* **reason :** [OPTIONAL] Employee's reason for resignation <br />
+string
+
+* **details :** [OPTIONAL] Employee's resignation details <br />
+string
+
+* **notice :** [OPTIONAL] Employee's resignation notice <br />
+Date
+
+
+### DELETE resignation by Id  -  DELETE /resignations/resignationId
+###### Permission: Admins and Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+## Salary
+
+### Create salary  -  POST /salaries
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+* **content-type  :** Set value to application/json <br />
+string
+
+
+#### Body Params
+
+* **basicSalary :** Basic salary for an employee <br />
+string
+
+* **bankName :** Employee's bank name <br />
+string
+
+* **accountNumber :** Employee's account number <br />
+string
+
+* **accountName :** Employee's account name <br />
+string
+
+* **employeeId :** The ID of the employee who this salary is being created for <br />
+number
+
+### Get salaries  -  GET /salaries
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+### Get salary by Id  -  GET /salaries/salaryId
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+### Edit salary  -  PATCH /salaries/:salaryId
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+* **content-type  :** Set value to application/json <br />
+string
+
+
+#### Body Params
+
+* **basicSalary :** [OPTIONAL] Basic salary for an employee <br />
+string
+
+* **bankName :** [OPTIONAL] Employee's bank name <br />
+string
+
+* **accountNumber :** [OPTIONAL] Employee's account number <br />
+string
+
+* **accountName :** [OPTIONAL] Employee's account name <br />
+string
+
+* **employeeId :** [OPTIONAL] The ID of the employee who this salary is being created for <br />
+number
+
+### DELETE salary by Id  -  DELETE /salaries/salaryId
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+## Reports
+
+### Get leave reports  -  GET /reports/leave
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+### Get activity reports  -  GET /reports/activity
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+### Get project reports  -  GET /reports/project
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
