@@ -292,6 +292,107 @@ string
 string
 
 
+## Projects
+
+### Create projects  -  POST /projects
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+* **content-type  :** Set value to application/json <br />
+string
+
+
+#### Body Params
+
+* **title :** Project's title <br />
+string
+
+* **description :** Project's description <br />
+string
+
+* **url :** Projects's url <br />
+number
+
+* **estimatedCost :** Projects's estimated cost <br />
+string
+
+* **estimatedTime :** Projects's estimated time <br />
+Date
+
+* **status :** Project's status ['INACTIVE', 'ACTIVE', 'COMPLETED', 'CANCELLED'] <br />
+string 
+
+* **employees :** A list of employees that will be part of the project ([{id: 1}, {id: 2}])<br />
+JSON Object
+
+### Get projects  -  GET /projects
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
+### Get projects by Id  -  GET /projects/projectId
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+### Edit projects  -  PATCH /projects/:projectId
+###### Permission: Admins and Employees
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+**content-type  :** Set value to application/json <br />
+string
+
+
+#### Body Params
+
+* **title :** [OPTIONAL] Project's title <br />
+string
+
+* **description :** [OPTIONAL] Project's description <br />
+string
+
+* **remark :** [OPTIONAL] Project's remark <br />
+string
+
+* **url :** [OPTIONAL] Projects's url <br />
+number
+
+* **estimatedCost :** [OPTIONAL] Projects's estimated cost <br />
+string
+
+* **estimatedTime :** [OPTIONAL] Projects's estimated time <br />
+Date
+
+* **status :** [OPTIONAL] Project's status ['INACTIVE', 'ACTIVE', 'COMPLETED', 'CANCELLED'] <br />
+string 
+
+* **employees :** [OPTIONAL] A list of employees that will be part of the project ([{id: 1}, {id: 2}])<br />
+JSON Object
+
+
+### DELETE project by Id  -  DELETE /projects/projectId
+###### Permission: Admins
+
+#### Headers
+
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+string
+
+
 ## Leaves
 
 ### Create leave Application  -  POST /leaves
@@ -379,7 +480,7 @@ string
 * **status :** Type of leave ['APPROVED', 'PENDING', 'REJECTED', 'CANCELLED'] <br />
 string
 
-### DELETE leave by Id  -  DELETER /leaves/leaveId
+### DELETE leave by Id  -  DELETE /leaves/leaveId
 ###### Permission: Admins and Employees
 
 #### Headers
