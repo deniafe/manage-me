@@ -1,13 +1,14 @@
 # Manage Me - An Employee Management System
 
-- Manage Me is an api that enables users to create, store and manage Employee Records
-- The application also provides simple facilities for a payroll and leave application
-- Employess can also log daily tasks and be assigned to projects
-- Employee management system can manage and store details like employees personal info, their work experiences and education.
+- Manage-Me is an api that enables admins to create, store and manage Employee Records
+- The application also provides simple facilities to manage payroll, leaves and project assignments
+- Employess can also log daily tasks and be voice their grievances
+- Manage-me can manage and store details like employees personal info, their work experiences and education.
+- Admins can also use the application to generate 3 types of reports. Leave Reports, Activities Report and Projects Reports
 
 -------------
 
-This web application contains two account access:
+This api contains two account access:
 - Admin
 - Employee
 
@@ -41,6 +42,7 @@ The different modules of this project is as follows:
 ## How to run this project in a local development machine
 * Make sure you install node modules using `yarn` command
 * Make sure you have docker running
+* You can edit the .env files in the project or leave as is (OPTIONAL)
 * Run the following commands
 ## Installation
 
@@ -54,9 +56,7 @@ yarn db:dev:restart // start postgres in docker and push migrations
 
 yarn start:dev // start api in dev mode
 
-* You can edit the .env files in the project or leave as is
-
-## For Test
+## Running Tests
 
 ```bash
 * You can adjust the sleep time for the `test:e2e` in the package.json file to suite your system speed.
@@ -66,5 +66,50 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 ```
 
+-------------
+
+
+## API END POINTS
+
+# Headers
+
+* Authorization : Set value to Bearer ACCESS_TOKEN
+string
+
+* content-type  : Set value to application/json
+string
+
+# Create an employee
+
+-Permission: Admins
+
+* email : Employee's email ('employee@email.com')
+string
+
+* password : Password that will be passed to employee
+string
+
+* firstName : Employee's first name
+string 
+
+* lastName : Employee's last name
+string   
+
+* dob : Employee's date of birth (new Date('09/20/1991'))
+Date   
+
+* gender : Employees's gender ('Female')
+string
+
+
+# Login
+
+-Permission: Admins and Employees
+
+* email : Employee's email (employee@email.com)
+string
+
+* password : Password that will be passed to employee
+string
 
 
