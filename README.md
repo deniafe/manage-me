@@ -78,7 +78,7 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 #### Headers
 
-**content-type  :** Set value to application/json <br />
+* **content-type  :** Set value to application/json <br />
 string
 
 #### Body Params
@@ -122,16 +122,16 @@ string
 
 #### Headers
 
-**content-type  :** Set value to application/json <br />
+* **content-type  :** Set value to application/json <br />
 string
 
 
 #### Body Params
 
-**email :** Employee's email (employee@email.com) <br />
+* **email :** Employee's email (employee@email.com) <br />
 string
 
-**password :** Employee's password <br />
+* **password :** Employee's password <br />
 string
 
 
@@ -142,7 +142,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 ### Get logged in employee  -  GET /employees/me
@@ -150,7 +150,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
@@ -159,7 +159,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 ### Edit employee  -  PATCH /employees/:employeeId
@@ -167,52 +167,52 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-**content-type  :** Set value to application/json <br />
+* **content-type  :** Set value to application/json <br />
 string
 
 
 #### Body Params
 
-**email :** [OPTIONAL] Employee's email ('employee@email.com') <br />
+* **email :** [OPTIONAL] Employee's email ('employee@email.com') <br />
 string
 
-**firstName :** [OPTIONAL] Employee's first name <br />
+* **firstName :** [OPTIONAL] Employee's first name <br />
 string
 
- **lastName :** [OPTIONAL] Employee's last name <br />
+* **lastName :** [OPTIONAL] Employee's last name <br />
 string
 
-**gender :** [OPTIONAL] Employees's gender ('Female') <br />
+* **gender :** [OPTIONAL] Employees's gender ('Female') <br />
 string
 
-**middleName :** [OPTIONAL] Employee's last name <br />
+* **middleName :** [OPTIONAL] Employee's last name <br />
 string
 
-**dob :** [OPTIONAL] Employee's date of birth (new Date('09/20/1991')) <br />
+* **dob :** [OPTIONAL] Employee's date of birth (new Date('09/20/1991')) <br />
 Date
 
-**dateOfJoining :** [OPTIONAL] Employee's date of joining the comapany (new Date('01/20/2022')) <br />
+* **dateOfJoining :** [OPTIONAL] Employee's date of joining the comapany (new Date('01/20/2022')) <br />
 Date
 
-**terminateDate :** [OPTIONAL] Employee's date of leaving the comapany (new Date('07/20/2022')) <br />
+* **terminateDate :** [OPTIONAL] Employee's date of leaving the comapany (new Date('07/20/2022')) <br />
 Date
 
-**phone :** [OPTIONAL] Employees's gender ('Female') <br />
+* **phone :** [OPTIONAL] Employees's gender ('Female') <br />
 string
 
-**photo :** [OPTIONAL] Url of the employee's picture <br />
+* **photo :** [OPTIONAL] Url of the employee's picture <br />
 string
 
-**address :** [OPTIONAL] Url of the employee's picture ({street: string, city: string, country: string}) <br />
+* **address :** [OPTIONAL] Url of the employee's picture ({street: string, city: string, country: string}) <br />
 JSON object
 
-**workExperience :** [OPTIONAL] Employee's work experience({fromDate: Date, toDate: Date, companyName: string, designation: string}) <br />
+* **workExperience :** [OPTIONAL] Employee's work experience({fromDate: Date, toDate: Date, companyName: string, designation: string}) <br />
 JSON object
 
-**education :** [OPTIONAL] Employee's education ([{school: string, degree: string, grade: string, year: string}]) <br />
+* **education :** [OPTIONAL] Employee's education ([{school: string, degree: string, grade: string, year: string}]) <br />
 JSON object
 
 ### Delete employee by Id  -  DELETE /employees/:employeeId
@@ -220,7 +220,7 @@ JSON object
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
@@ -231,19 +231,19 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-**content-type  :** Set value to application/json <br />
+* **content-type  :** Set value to application/json <br />
 string
 
 
 #### Body Params
 
-**title :** Grievance title <br />
+* **title :** Grievance title <br />
 string
 
-**details :** Grievance details <br />
+* **details :** Grievance details <br />
 string
 
 ### Get grievances  -  GET /grievances
@@ -251,7 +251,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
@@ -260,7 +260,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 ### Edit Grievance  -  PATCH /grievances/:grievanceId
@@ -268,19 +268,19 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-**content-type  :** Set value to application/json <br />
+* **content-type  :** Set value to application/json <br />
 string
 
 
 #### Body Params
 
-**title :** [OPTIONAL] Grievance title <br />
+* **title :** [OPTIONAL] Grievance title <br />
 string
 
-**details :** [OPTIONAL] Grievance details <br />
+* **details :** [OPTIONAL] Grievance details <br />
 string
 
 ### DELETE grievance by Id  -  DELETER /grievanes/grievanceId
@@ -288,7 +288,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
@@ -299,25 +299,25 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-**content-type  :** Set value to application/json <br />
+* **content-type  :** Set value to application/json <br />
 string
 
 
 #### Body Params
 
-**fromDate :** Leave start date <br />
+* **fromDate :** Leave start date <br />
 Date
 
-**toDate :** Leave end date <br />
+* **toDate :** Leave end date <br />
 Date
 
-**reasonForLeave :** The reason for the leave <br />
+* **reasonForLeave :** The reason for the leave <br />
 string
 
-**type :** Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
+* **type :** Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
 string 
 
 ### Get leaves  -  GET /leaves
@@ -325,7 +325,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
@@ -334,7 +334,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 ### Edit leaves  -  PATCH /leaves/:leaveId
@@ -342,25 +342,25 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-**content-type  :** Set value to application/json <br />
+* **content-type  :** Set value to application/json <br />
 string
 
 
 #### Body Params
 
-**fromDate :** [OPTIONAL] Leave start date <br />
+* **fromDate :** [OPTIONAL] Leave start date <br />
 Date
 
-**toDate :** [OPTIONAL] Leave end date <br />
+* **toDate :** [OPTIONAL] Leave end date <br />
 Date
 
-**reasonForLeave :** [OPTIONAL] The reason for the leave <br />
+* **reasonForLeave :** [OPTIONAL] The reason for the leave <br />
 string
 
-**type :** [OPTIONAL] Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
+* **type :** [OPTIONAL] Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
 string
 
 ### Manage leaves  -  PATCH /leaves/manage/:leaveId
@@ -368,7 +368,7 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 **content-type  :** Set value to application/json <br />
 string
@@ -376,7 +376,7 @@ string
 
 #### Body Params
 
-**status :** Type of leave ['APPROVED', 'PENDING', 'REJECTED', 'CANCELLED'] <br />
+* **status :** Type of leave ['APPROVED', 'PENDING', 'REJECTED', 'CANCELLED'] <br />
 string
 
 ### DELETE leave by Id  -  DELETER /leaves/leaveId
@@ -384,5 +384,5 @@ string
 
 #### Headers
 
-**Authorization :** Set value to Bearer ACCESS_TOKEN <br />
+* **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
