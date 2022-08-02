@@ -71,25 +71,24 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 # API END POINTS
 
-## Headers
-
-* Authorization : Set value to Bearer ACCESS_TOKEN
-string
-
-* content-type  : Set value to application/json
-string
-
 ## Create an employee
-
 ###### Permission: Admins
+
+### Headers
+
+#### Authorization : Set value to Bearer ACCESS_TOKEN
+###### string
+
+##### content-type  : Set value to application/json
+###### string
 
 ### Body Params
 
-##### email : string
-Employee's email ('employee@email.com')
+#### email : Employee's email ('employee@email.com')
+###### string
 
-##### password : string
-Password that will be passed to employee
+##### password : #### Password that will be passed to employee
+###### string
 
 ##### firstName : string
 Employee's first name
@@ -105,8 +104,15 @@ Employees's gender ('Female')
 
 
 ## Login
-
 ###### Permission: Admins and Employees
+
+### Headers
+
+##### content-type  : Set value to application/json
+###### string
+
+
+### Body Params
 
 ##### email : string
 Employee's email (employee@email.com)
