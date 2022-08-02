@@ -71,7 +71,7 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 # API END POINTS
 
-## Create an employee
+## Create an employee  -  POST /auth/register
 ###### Permission: Admins
 
 ### Headers
@@ -103,7 +103,7 @@ Date
 string
 
 
-## Login
+## Login  -  POST /auth/login
 ###### Permission: Admins and Employees
 
 ### Headers
