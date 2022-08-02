@@ -71,15 +71,17 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 # API END POINTS
 
-## Register employee  -  POST /auth/register
+## Auth
+
+### Register employee  -  POST /auth/register
 ###### Permission: Admins
 
-### Headers
+#### Headers
 
 **content-type  :** Set value to application/json <br />
 string
 
-### Body Params
+#### Body Params
 
 **email :** Employee's email ('employee@email.com') <br />
 string
@@ -115,16 +117,16 @@ string
 string
 
 
-## Login  -  POST /auth/login
+### Login  -  POST /auth/login
 ###### Permission: Admins and Employees
 
-### Headers
+#### Headers
 
 **content-type  :** Set value to application/json <br />
 string
 
 
-### Body Params
+#### Body Params
 
 **email :** Employee's email (employee@email.com) <br />
 string
@@ -133,38 +135,37 @@ string
 string
 
 
--------------
+## Employees
 
-
-## Get employees  -  GET /employees
+### Get employees  -  GET /employees
 ###### Permission: Admins
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-## Get logged in employee  -  GET /employees/me
+### Get logged in employee  -  GET /employees/me
 ###### Permission: Admins and Employees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
-## Get employee by Id  -  GET /employees/:employeeId
+### Get employee by Id  -  GET /employees/:employeeId
 ###### Permission: Admins
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-## Edit employee  -  PATCH /employees/:employeeId
+### Edit employee  -  PATCH /employees/:employeeId
 ###### Permission: Admins
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
@@ -173,7 +174,7 @@ string
 string
 
 
-### Body Params
+#### Body Params
 
 **email :** [OPTIONAL] Employee's email ('employee@email.com') <br />
 string
@@ -214,21 +215,21 @@ JSON object
 **education :** [OPTIONAL] Employee's education ([{school: string, degree: string, grade: string, year: string}]) <br />
 JSON object
 
-## Delete employee by Id  -  DELETE /employees/:employeeId
+### Delete employee by Id  -  DELETE /employees/:employeeId
 ###### Permission: Admins
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
--------------
+## Grievances
 
-## Create Grievance  -  POST /grievances
+### Create Grievance  -  POST /grievances
 ###### Permission: Employees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
@@ -237,7 +238,7 @@ string
 string
 
 
-### Body Params
+#### Body Params
 
 **title :** Grievance title <br />
 string
@@ -245,27 +246,27 @@ string
 **details :** Grievance details <br />
 string
 
-## Get grievances  -  GET /grievances
+### Get grievances  -  GET /grievances
 ###### Permission: Admins
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
-## Get grievance by Id  -  GET /grievanes/grievanceId
+### Get grievance by Id  -  GET /grievanes/grievanceId
 ###### Permission: Employees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-## Edit Grievance  -  PATCH /grievances/:grievanceId
+### Edit Grievance  -  PATCH /grievances/:grievanceId
 ###### Permission: Employees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
@@ -274,7 +275,7 @@ string
 string
 
 
-### Body Params
+#### Body Params
 
 **title :** [OPTIONAL] Grievance title <br />
 string
@@ -282,21 +283,21 @@ string
 **details :** [OPTIONAL] Grievance details <br />
 string
 
-## DELETE grievance by Id  -  DELETER /grievanes/grievanceId
+### DELETE grievance by Id  -  DELETER /grievanes/grievanceId
 ###### Permission: Employees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
--------------
+## Leaves
 
-## Create leave Application  -  POST /leaves
+### Create leave Application  -  POST /leaves
 ###### Permission: Employees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
@@ -305,7 +306,7 @@ string
 string
 
 
-### Body Params
+#### Body Params
 
 **fromDate :** Leave start date <br />
 Date
@@ -319,27 +320,27 @@ string
 **type :** Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
 string 
 
-## Get leaves  -  GET /leaves
+### Get leaves  -  GET /leaves
 ###### Permission: Admins
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
 
-## Get leaves by Id  -  GET /leaves/leaveId
+### Get leaves by Id  -  GET /leaves/leaveId
 ###### Permission: Admins andEmployees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
 
-## Edit leaves  -  PATCH /leaves/:leaveId
+### Edit leaves  -  PATCH /leaves/:leaveId
 ###### Permission: Admins and Employees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
@@ -348,7 +349,7 @@ string
 string
 
 
-### Body Params
+#### Body Params
 
 **fromDate :** [OPTIONAL] Leave start date <br />
 Date
@@ -362,27 +363,26 @@ string
 **type :** [OPTIONAL] Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
 string
 
-## Manage leaves  -  PATCH /leaves/manage/:leaveId
+### Manage leaves  -  PATCH /leaves/manage/:leaveId
 ###### Permission: Admins
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
-
 **content-type  :** Set value to application/json <br />
 string
 
 
-### Body Params
+#### Body Params
 
 **status :** Type of leave ['APPROVED', 'PENDING', 'REJECTED', 'CANCELLED'] <br />
 string
 
-## DELETE leave by Id  -  DELETER /leaves/leaveId
+### DELETE leave by Id  -  DELETER /leaves/leaveId
 ###### Permission: Admins and Employees
 
-### Headers
+#### Headers
 
 **Authorization :** Set value to Bearer ACCESS_TOKEN <br />
 string
