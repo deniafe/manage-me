@@ -87,20 +87,20 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 #### email : Employee's email ('employee@email.com')
 ###### string
 
-##### password : #### Password that will be passed to employee
+#### password : Password that will be passed to employee
 ###### string
 
-##### firstName : string
-Employee's first name
+##### firstName : Employee's first name
+###### string
 
-##### lastName : string
-Employee's last name 
+##### lastName : Employee's last name
+###### string
 
-##### dob : Date
-Employee's date of birth (new Date('09/20/1991'))
+##### dob : Employee's date of birth (new Date('09/20/1991'))
+###### Date
 
-##### gender : string
-Employees's gender ('Female')
+##### gender : Employees's gender ('Female')
+###### string
 
 
 ## Login
@@ -114,10 +114,12 @@ Employees's gender ('Female')
 
 ### Body Params
 
-##### email : string
-Employee's email (employee@email.com)
+##### email : Employee's email (employee@email.com)
+###### string
 
-##### password : string
-Password that will be passed to employee
+
+##### password : Employee's password
+###### string
+
 
 
