@@ -7,7 +7,6 @@ export class EmployeeService {
   constructor(private prisma: PrismaService) {}
 
   async getEmployeeById(
-    isAdmin: boolean,
     employeeId: number,
   ) {
 
@@ -21,11 +20,14 @@ export class EmployeeService {
           project: true,
           salary: true,
           activities: true,
+          education: true,
+          address: true,
+          leaveApplications: true,
         }
       });
 
-    // check if employee exists and if request is from an admin
-    if (!employee || !isAdmin)
+    // check if employee exists
+    if (!employee)
       throw new ForbiddenException(
         'Access to resources denied',
       );

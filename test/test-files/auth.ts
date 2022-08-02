@@ -2,7 +2,7 @@ import { SigninDto, SignupDto } from '../../src/auth/dto';
 
 export const Auth = (pactum) => {    
   
-  describe('Signup', () => { 
+  describe('Register', () => {  
       
     const dto: SignupDto = {
       "email": "admin14@email.com",
@@ -10,10 +10,8 @@ export const Auth = (pactum) => {
       "firstName": "Rebecca",
       "lastName": "Dosumu", 
       "middleName": "Ajoke",
-      "gender": "female",
+      "gender": "female", 
       "dob": new Date(1657521635030),
-      "dateOfJoining": new Date(1657521635030),
-      "terminateDate": null,
       "phone": "8166582459",
       "photo": "https://www.youtube.com/watch?v=GHTA143_b-s&t=114s",
     };
@@ -22,6 +20,9 @@ export const Auth = (pactum) => {
       return pactum
         .spec()
         .post('/auth/signup')
+        .withHeaders({
+          Authorization: 'Bearer $S{adminAt}',
+        })
         .withBody({
           password: dto.password,
         })
@@ -53,7 +54,10 @@ export const Auth = (pactum) => {
       return pactum
         .spec()
         .post('/auth/signup')
-        .withBody({
+        .withHeaders({
+          Authorization: 'Bearer $S{adminAt}',
+        })
+        .withBody({  
           ...dto,
           email: 'toyin@email.com'
         })
@@ -64,13 +68,13 @@ export const Auth = (pactum) => {
 
   describe('Signin', () => {
 
-    const dto: SigninDto = {
-      "email": "admin14@email.com",
+    const adminDto: SigninDto = {
+      "email": "admin@tonote.com",
       "password": "12345",
     };
 
-    const adminDto: SigninDto = {
-      "email": "admin@tonote.com",
+    const dto: SigninDto = {
+      "email": "admin14@email.com",
       "password": "12345",
     };
 
@@ -106,6 +110,7 @@ export const Auth = (pactum) => {
         .expectStatus(200)
         .stores('userAt', 'access_token')
     });
+
     it('should signin as admin', () => {
       return pactum
         .spec()

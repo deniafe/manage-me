@@ -24,16 +24,16 @@ export class EmployeeController {
   constructor(private employeeService: EmployeeService) {}
   
   @Get('/me')
-  getMe(@GetEmployee() employee: Employee) {
-    return employee
+  getMe(@GetEmployee('id') employeeId: number) {
+    return this.employeeService.getEmployeeById(employeeId)
   }
 
+  @UseGuards(AdminGuard)
   @Get('/:id')
   getEmployeeById( 
-    @GetEmployee('admin') isAdmin: boolean, 
     @Param('id', ParseIntPipe) employeeId: number, 
     ) {
-    return this.employeeService.getEmployeeById(isAdmin, employeeId)
+    return this.employeeService.getEmployeeById(employeeId)
   }
 
 

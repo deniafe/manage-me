@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Post, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { SignupDto, SigninDto } from './dto';
 
@@ -7,13 +7,13 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @HttpCode(HttpStatus.OK)
-  @Post('login')
-  signin( @Body() dto: SigninDto ) { 
-    return this.authService.signin(dto)
+  @Post('signin')
+  sigin( @Body() dto: SigninDto ) { 
+    return this.authService.sigin(dto)
   }
 
-  @Post('register')
-  signup( @Body() dto: SignupDto ) {
+  @Post('signup')
+  sigup( @Body() dto: SignupDto ) {
     return this.authService.signup(dto)
   }
 

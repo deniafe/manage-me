@@ -24,7 +24,7 @@ export const Employee = (pactum) => {
         .withHeaders({
           Authorization: 'Bearer $S{employeeAt}',
         })
-        .expectStatus(200)
+        .expectStatus(200) 
         .stores('employeeId2', 'id')
     });
   });

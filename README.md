@@ -74,7 +74,7 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 ## Auth
 
 ### Register employee  -  POST /auth/register
-###### Permission: Admins
+###### Permission: Admins and Employees
 
 #### Headers
 
@@ -98,22 +98,16 @@ string
 * **gender :** Employees's gender ('Female') <br />
 string
 
-* **middleName :** [OPTIONAL] Employee's last name <br />
+* **middleName :** Employee's last name <br />
 string
 
-* **dob :** [OPTIONAL] Employee's date of birth (new Date('09/20/1991')) <br />
+* **dob :** Employee's date of birth (new Date('09/20/1991')) <br />
 Date
 
-* **dateOfJoining :** [OPTIONAL] Employee's date of joining the comapany (new Date('01/20/2022')) <br />
-Date
-
-* **terminateDate :** [OPTIONAL] Employee's date of leaving the comapany (new Date('07/20/2022')) <br />
-Date
-
-* **phone :** [OPTIONAL] Employees's gender ('Female') <br />
+* **phone :** Employees's gender ('Female') <br />
 string
 
-* **photo :** [OPTIONAL] Url of the employee's picture <br />
+* **photo :** Url of the employee's picture <br />
 string
 
 
@@ -410,7 +404,7 @@ string
 Date
 
 * **status :** Project's status ['INACTIVE', 'ACTIVE', 'COMPLETED', 'CANCELLED'] <br />
-string 
+string (Enum)
 
 * **employees :** A list of employees that will be part of the project ([{id: 1}, {id: 2}])<br />
 JSON Object
@@ -505,7 +499,7 @@ Date
 string
 
 * **type :** Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
-string 
+string (Enum)
 
 ### Get leaves  -  GET /leaves
 ###### Permission: Admins
@@ -548,7 +542,7 @@ Date
 string
 
 * **type :** [OPTIONAL] Type of leave ['SICK', 'CASUAL', 'MATERNITY', 'PATERNITY', 'GEREAVEMENT', 'COMPENSATORY', 'SABBATICAL', 'UNPAID'] <br />
-string
+string (Enum)
 
 ### Manage leaves  -  PATCH /leaves/manage/:leaveId
 ###### Permission: Admins
@@ -564,7 +558,7 @@ string
 #### Body Params
 
 * **status :** Type of leave ['APPROVED', 'PENDING', 'REJECTED', 'CANCELLED'] <br />
-string
+string (Enum)
 
 ### DELETE leave by Id  -  DELETE /leaves/leaveId
 ###### Permission: Admins and Employees

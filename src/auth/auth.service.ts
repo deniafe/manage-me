@@ -26,8 +26,6 @@ export class AuthService {
           middleName: dto.middleName,
           gender: dto.gender,
           dob: dto.dob,
-          dateOfJoining: dto.dateOfJoining,
-          terminateDate: dto.terminateDate,
           phone: dto.phone,
           photo: dto.photo,
           admin: false,
@@ -53,7 +51,7 @@ export class AuthService {
     }
   }
 
-  async signin(dto: SigninDto) {
+  async sigin(dto: SigninDto) {
     // find the user by email
     const employee =
       await this.prisma.employee.findUnique({

@@ -26,7 +26,7 @@ export class SignupDto {
   lastName: string;
 
   @IsString()
-  @IsOptional()
+  @IsNotEmpty()
   middleName?: string;
 
   @IsString()
@@ -34,19 +34,10 @@ export class SignupDto {
   gender: string;
 
   @IsDate()
-  @IsOptional()
+  @IsNotEmpty()
   @Type(() => Date)
   dob?: Date;
-
-  @IsDate()
-  @IsOptional()
-  @Type(() => Date)
-  dateOfJoining?: Date;
-
-  @IsOptional()
-  @IsDate()
-  terminateDate?: Date; 
-
+  
   @IsString()
   @IsOptional()
   @Length(10, 13)
