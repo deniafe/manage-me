@@ -95,8 +95,8 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 ##### Employee's first name
 ###### string
 
-##### lastName : string
-> Employee's last name 
+##### * lastName
+##### Employee's last name 
 ###### string
 
 ##### dob : Date
