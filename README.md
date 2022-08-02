@@ -83,37 +83,37 @@ string
 
 #### Body Params
 
-**email :** Employee's email ('employee@email.com') <br />
+* **email :** Employee's email ('employee@email.com') <br />
 string
 
-**password :** Password that will be passed to employee <br />
+* **password :** Password that will be passed to employee <br />
 string
 
-**firstName :** Employee's first name <br />
+* **firstName :** Employee's first name <br />
 string
 
- **lastName :** Employee's last name <br />
+* **lastName :** Employee's last name <br />
 string
 
-**gender :** Employees's gender ('Female') <br />
+* **gender :** Employees's gender ('Female') <br />
 string
 
-**middleName :** [OPTIONAL] Employee's last name <br />
+* **middleName :** [OPTIONAL] Employee's last name <br />
 string
 
-**dob :** [OPTIONAL] Employee's date of birth (new Date('09/20/1991')) <br />
+* **dob :** [OPTIONAL] Employee's date of birth (new Date('09/20/1991')) <br />
 Date
 
-**dateOfJoining :** [OPTIONAL] Employee's date of joining the comapany (new Date('01/20/2022')) <br />
+* **dateOfJoining :** [OPTIONAL] Employee's date of joining the comapany (new Date('01/20/2022')) <br />
 Date
 
-**terminateDate :** [OPTIONAL] Employee's date of leaving the comapany (new Date('07/20/2022')) <br />
+* **terminateDate :** [OPTIONAL] Employee's date of leaving the comapany (new Date('07/20/2022')) <br />
 Date
 
-**phone :** [OPTIONAL] Employees's gender ('Female') <br />
+* **phone :** [OPTIONAL] Employees's gender ('Female') <br />
 string
 
-**photo :** [OPTIONAL] Url of the employee's picture <br />
+* **photo :** [OPTIONAL] Url of the employee's picture <br />
 string
 
 
