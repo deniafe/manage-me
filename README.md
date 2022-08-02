@@ -76,18 +76,22 @@ $ yarn test:e2e // start postgres in docker and push migrations and run the e2e 
 
 ### Headers
 
-#### Authorization : Set value to Bearer ACCESS_TOKEN
+#### Authorization
+##### Set value to Bearer ACCESS_TOKEN
 ###### string
 
-##### content-type  : Set value to application/json
+##### content-type
+##### Set value to application/json
 ###### string
 
 ### Body Params
 
-#### email : Employee's email ('employee@email.com')
+#### email
+##### Employee's email ('employee@email.com')
 ###### string
 
-#### password : Password that will be passed to employee
+#### password
+##### Password that will be passed to employee
 ###### string
 
 ##### firstName : Employee's first name
